@@ -113,28 +113,133 @@ Created on Fri Oct  4 21:08:43 2019
 #print('numGuesses =', numGuesses)
 #print(ans, 'is close to square root of', x)
 
-x = 25
-epsilon = 0.01
-numGuesses = 0
-if x < 0:
-    low = x
-    high = 0.0
-else:
-    low = 0.0
-    high = x
+#x = 25
+#epsilon = 0.01
+#numGuesses = 0
+#if x < 0:
+#    low = x
+#    high = 0.0
+#else:
+#    low = 0.0
+#    high = x
+#
+#ans = (high + low)/2.0
+#
+#while abs(ans**3 - x) >= epsilon:
+#    print('low =', low, 'high =', high, 'ans =', ans)
+#    numGuesses += 1
+#    if abs(ans**3) < abs(x):
+#        if x < 0:
+#            low = x
+#            high = ans
+#        else:
+#            low = ans
+#            high = x
+#    ans = (high + low)/2.0
+#print('numGuesses =', numGuesses)
+#print(ans, 'is close to cube root of', x)
 
-ans = (high + low)/2.0
+#epsilon = 0.01
+#k = 24.0
+#guess = k/2.0
+#while abs(guess*guess - k) >= epsilon:
+#    guess = guess - (guess**2 - k)/(2*guess)
+#    print(guess)
+#print('Square root of', k, 'is about', guess)
 
-while abs(ans**3 - x) >= epsilon:
-    print('low =', low, 'high =', high, 'ans =', ans)
-    numGuesses += 1
-    if abs(ans**3) < abs(x):
-        if x < 0:
-            low = x
-            high = ans
-        else:
-            low = ans
-            high = x
-    ans = (high + low)/2.0
-print('numGuesses =', numGuesses)
-print(ans, 'is close to cube root of', x)
+#def isIn(str1, str2):
+#    if (str1 in str2) or (str2 in str1):
+#        return True
+#    else:
+#        return False
+#print(isIn('s', 'sssss'))
+
+#def printName(firstName, lastName, reverse):
+#    if reverse:
+#        print(lastName + ', ' + firstName)
+#    else:
+#        print(firstName, lastName)
+#        
+#printName('Olga', 'Puchmajerova', False)
+#printName('Olga', 'Puchmajerova', reverse=False)
+#printName('Olga', lastName = 'Puchmajerova', reverse=False)
+#printName(lastName = 'Puchmajerova', firstName = 'Olga', reverse = False)
+
+#def findRoot(x, power, epsilon):
+#    """Assumes x and epsilon int or float, power an int,
+#            epsilon > 0 & power >= 1
+#       Returns float y such that y**power is within epsilon of x.
+#           If such a float does not exist, it returns None"""
+#           
+#    if x < 0 and power%2 == 0:
+#        return None
+#    
+#    low = min(-1.0, x)
+#    high = max(1.0, x)
+#    ans = (high + low)/2.0
+#    
+#    while abs(ans**power - x) >= epsilon:
+#        if ans**power < x:
+#            low = ans
+#        else:
+#            high = ans
+#        ens = (high + low)/2.0
+#    return ans
+#
+#def testFindRoot():
+#    epsilon = 0.0001
+#    for x in [0.25, -0.25, 2, -2, 8, -8]:
+#        for power in range(1, 4):
+#            print('Testing x =', str(x), 'and power = ', power)
+#            result = findRoot(x, power, epsilon)
+#            if result == None:
+#                print('   No root')
+#            else:
+#                print('   ', result**power, '~=', x)
+
+#def factI(n):
+#    """Assumes n an int > 0
+#       Returns n!"""
+#    result = 1
+#    while n > 1:
+#        result = result * n
+#        n -= 1
+#    return result
+#
+#def factrR(n):
+#    """Assumes n an int > 0
+#       Returns n!"""
+#    if n == 1:
+#        return n
+#    else:
+#        return n*factrR(n-1)
+
+#def fib(x):
+#    """Assumes x an int >= 0
+#       Returns Fibonacci of x"""
+#    global numFibCalls
+#    numFibCalls += 1
+#    if x == 0 or x == 1:
+#        return 1
+#    else:
+#        return fib(x-1) + fib(x-2)
+#    
+#def testFib(n):
+#    for i in range(n+1):
+#        global numFibCalls
+#        numFibCalls = 0
+#        print('fib of', i, '=', fib(i))
+#        print('fib called', numFibCalls, 'times.')
+#
+#testFib(2)
+
+nameHandle = open('kids', 'w')
+for i in range(2):
+    name = input('Enter name: ')
+    nameHandle.write(name + '\n')
+nameHandle.close()
+
+nameHandle = open('kids', 'r')
+for line in nameHandle:
+    print(line)
+nameHandle.close()
