@@ -208,18 +208,79 @@ Created on Wed Sep 25 20:22:24 2019
 #    else:
 #        return fib(x-1) + fib(x-2)
 
-def isPalindrome(s):
-    def toChars(s):
-        s = s.lower()
-        ans = ''
-        for c in s:
-            if c in 'abcdefghijklmnopqrstuvwxyz':
-                ans = ans + c
-        return ans
-    
-    def isPal(s):
-        if len(s) <= 1:
-            return True
-        else:
-            return s[0] == s[-1] and isPal(s[1:-1])
-    return isPal(toChars(s))
+#def isPalindrome(s):
+#    def toChars(s):
+#        s = s.lower()
+#        ans = ''
+#        for c in s:
+#            if c in 'abcdefghijklmnopqrstuvwxyz':
+#                ans = ans + c
+#        return ans
+#    
+#    def isPal(s):
+#        if len(s) <= 1:
+#            return True
+#        else:
+#            return s[0] == s[-1] and isPal(s[1:-1])
+#    return isPal(toChars(s))
+
+#def lyrics_to_frequencies(lyrics):
+#    myDict = {}
+#    for word in lyrics:
+#        if word in myDict:
+#            myDict[word] += 1
+#        else:
+#            myDict[word] = 1
+#    return myDict
+#
+#def most_common_words(freqs):
+#    values = freqs.values()
+#    best = max(values)
+#    words = []
+#    for k in freqs:
+#        if freqs[k] == best:
+#            words.append(k)
+#            
+#    return (words, best)
+
+#def words_often(freqs, minTimes):
+#    result = []
+#    done = False
+#    while not done:
+#        temp = most_common_words(freqs)
+#        if temp[1] >= minTimes:
+#            result.append(temp)
+#            for w in temp[0]:
+#                del(freqs[w])
+#        else:
+#            done = True
+#    return result
+
+#def fib_efficient(n, d):
+#    if n in d:
+#        return d[n]
+#    else:
+#        ans = fib_efficient(n-1, d) + fib_efficient(n-2, d)
+#        d[n] = ans
+#        return ans
+#    
+#d = {1:1, 2:2}
+#print(fib_efficient(6, d))
+
+# debug
+def get_ratios(L1, L2):
+    """ Assumes: L1 and L2 are lists of equal length of numbers
+    Returns: alist containing L1[i]/L2[i] """
+    ratios = []
+    for index in range(len(L1)):
+        try:
+            ratios.append(L1[index]/L2[index])
+        except ZeroDivisionError:
+            ratios.append(float('nan'))
+        except:
+            raise ValueError('get_ratios called with bad arg')
+    return ratios
+
+def avg(grades):
+    assert not len(grades) == 0, 'no grades data'
+    return sum(grades) / len(grades)
