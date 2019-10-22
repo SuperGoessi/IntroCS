@@ -268,19 +268,56 @@ Created on Wed Sep 25 20:22:24 2019
 #print(fib_efficient(6, d))
 
 # debug
-def get_ratios(L1, L2):
-    """ Assumes: L1 and L2 are lists of equal length of numbers
-    Returns: alist containing L1[i]/L2[i] """
-    ratios = []
-    for index in range(len(L1)):
-        try:
-            ratios.append(L1[index]/L2[index])
-        except ZeroDivisionError:
-            ratios.append(float('nan'))
-        except:
-            raise ValueError('get_ratios called with bad arg')
-    return ratios
+#def get_ratios(L1, L2):
+#    """ Assumes: L1 and L2 are lists of equal length of numbers
+#    Returns: alist containing L1[i]/L2[i] """
+#    ratios = []
+#    for index in range(len(L1)):
+#        try:
+#            ratios.append(L1[index]/L2[index])
+#        except ZeroDivisionError:
+#            ratios.append(float('nan'))
+#        except:
+#            raise ValueError('get_ratios called with bad arg')
+#    return ratios
+#
+#def avg(grades):
+#    assert not len(grades) == 0, 'no grades data'
+#    return sum(grades) / len(grades)
 
-def avg(grades):
-    assert not len(grades) == 0, 'no grades data'
-    return sum(grades) / len(grades)
+#OOP
+class Coordinate(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        
+    def distance(self, other):
+        x_diff_sq = (self.x - other.x) ** 2
+        y_diff_sq = (self.y - other.y) ** 2
+        return (x_diff_sq + y_diff_sq)**0.5
+    
+    def __str__(self):
+        return "<" + str(self.x) + ", " + str(self.y) + ">"
+        
+
+c = Coordinate(3, 4)
+origin = Coordinate(0, 0)
+print(c.x)
+print(origin.x)
+print(c)
+
+class Fraction(object):
+    """
+    A number represented as a function
+    """
+    def __init__(self, num, denom):
+        """ num and denom are integers"""
+        assert type(num) == int and type(denom) == int
+        self.num = num
+        self.denom = denom
+    
+    def __str__(self):
+        """Returns a new fraction representing of self"""
+        return str(self.num) + "/" + str(self.ddenom)
+    
+    
