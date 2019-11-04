@@ -285,39 +285,167 @@ Created on Wed Sep 25 20:22:24 2019
 #    assert not len(grades) == 0, 'no grades data'
 #    return sum(grades) / len(grades)
 
-#OOP
-class Coordinate(object):
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+##OOP
+#class Coordinate(object):
+#    def __init__(self, x, y):
+#        self.x = x
+#        self.y = y
+#        
+#    def distance(self, other):
+#        x_diff_sq = (self.x - other.x) ** 2
+#        y_diff_sq = (self.y - other.y) ** 2
+#        return (x_diff_sq + y_diff_sq)**0.5
+#    
+#    def __str__(self):
+#        return "<" + str(self.x) + ", " + str(self.y) + ">"
+#        
+#
+#c = Coordinate(3, 4)
+#origin = Coordinate(0, 0)
+#print(c.x)
+#print(origin.x)
+#print(c)
+#
+#class Fraction(object):
+#    """
+#    A number represented as a function
+#    """
+#    def __init__(self, num, denom):
+#        """ num and denom are integers"""
+#        assert type(num) == int and type(denom) == int
+#        self.num = num
+#        self.denom = denom
+#    
+#    def __str__(self):
+#        """Returns a new fraction representing of self"""
+#        return str(self.num) + "/" + str(self.ddenom)
+    
+#class Animal(object):
+#    def __init__(self, age):
+#        self.age = age
+#        self.name = None
+#    
+#    def get_age(self):
+#        return self.age
+#    
+#    def get_name(self):
+#        return self.name
+#    
+#    def set_age(self, newage):
+#        self.age = newage
+#        
+#    def set_name(self, newname=""):
+#        self.name = newname
+#    
+#    def __str__(self):
+#        return "animal:" + str(self.name) + ":" + str(self.age)
+#    
+#class Cat(Animal):
+#    def speak(self):
+#        print("meow")
+#    def __str__(self):
+#        return "cat: " + str(self.name) + ":" + str(self.age)
+#    
+#class Person(Animal):
+#    def __init__(self, name, age):
+#        Aminal.__init__(self, age)
+#        self.set_name(name)
+#        self.friends = []
+#        
+#    def get_friends(self):
+#        return self.friends
+#    
+#    def add_friend(self, fname):
+#        if fname not in self.friends:
+#            self.friends.append(fname)
+#            
+#    def speak(self):
+#        print("hello")
+#        
+#    def age_diff(self, other):
+#        diff = self.age - other.age
+#        print(abs(diff), "year difference")
+#        
+#    def __str__(self):
+#        return "person:" + str(self.name) + ":" + str(self.age)
+#import random   
+#class Student(Person):
+#    def __init__(self, name, age, major=None):
+#        Person.__init__(self, name, age)
+#        self.major = major
+#    def change_major(self, major):
+#        self.major = major
+#    def speak(self):
+#        r = random.random()
+#        if r < 0.25:
+#            print("i have homework")
+#        elif 0.25 <= r < 0.5:
+#            print("i need sleep")
+#        elif 0.5 <= r < 0.75:
+#            print("i should eat")
+#        else:
+#            print("i am watchng tv")
+#    def __str__(self):
+#        return "student: " + str(self.name) + ":" + str(self.age) + ":" + str(self.major)
+#
+#class Rabbit(Animal):
+#    tag = 1
+#    def __init__(self, age, parent1=None, parent2=None):
+#        Animal.__init__(self, age)
+#        self.parent1 = parent1
+#        self.parent2 = parent2
+#        self.rid = Rabbit.tag
+#        Rabbit.tag += 1
+#    def get_rid(self):
+#        return str(self.rid).zfill(3)
+#    def get_parent1(self):
+#        return self.parent1
+#    def get_parent2(self):
+#        return self.parent2
+#    def __eq__(self, other):
+#        parents_same = (self.parent1.rid == other.parent1.rid\
+#                       and self.parent2.rid == other.parents.rid)
+#        parents_opposite = (self.parent1.rid == other.parent1.rid\
+#                           and self.parent2.rid == other.parent2.rid)
+#        return parents_same or parents_opposite
         
-    def distance(self, other):
-        x_diff_sq = (self.x - other.x) ** 2
-        y_diff_sq = (self.y - other.y) ** 2
-        return (x_diff_sq + y_diff_sq)**0.5
-    
-    def __str__(self):
-        return "<" + str(self.x) + ", " + str(self.y) + ">"
-        
+#import time 
+#
+#def c_to_f(c):
+#    return c * 9 / 5 + 32
+#
+#t0 = time.clock()
+#c_to_f(100000)
+#t1 = time.clock() - t0
+#print("t = ", t0, ":", t1, "s,")
 
-c = Coordinate(3, 4)
-origin = Coordinate(0, 0)
-print(c.x)
-print(origin.x)
-print(c)
+#def bisect_search(L, e):
+#    if L == []:
+#        return False
+#    elif len(L) == 1:
+#        return L[0] == e
+#    else:
+#        half = len(L)//2
+#        if L[half] > e:
+#            return bisect_search(L[:half], e)
+#        else:
+#            return bisect_search(L[half:], e)
 
-class Fraction(object):
-    """
-    A number represented as a function
-    """
-    def __init__(self, num, denom):
-        """ num and denom are integers"""
-        assert type(num) == int and type(denom) == int
-        self.num = num
-        self.denom = denom
-    
-    def __str__(self):
-        """Returns a new fraction representing of self"""
-        return str(self.num) + "/" + str(self.ddenom)
-    
-    
+def bisect_search2(L, e):
+    def bisect_search_helper(L, e, low, high):
+        if high == low:
+            return L[low] == e
+        mid = (low + high)//2
+        if L[mid] == e:
+            return True
+        elif L[mid] > e:
+            if low == mid:
+                return False
+            else:
+                return bisect_search_helper(L, e, low, mid - 1)
+        else:
+            return bisect_search_helper(L, e, mid + 1, high)
+    if len(L) == 0:
+        return False
+    else:
+        return bizect_search_helper(L, e, 0, len(L) - 1)
