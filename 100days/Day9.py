@@ -340,3 +340,159 @@
 # if __name__ == '__main__':
 #     main()
 
+# import random
+
+# class Card(object):
+
+#     def __init__(self, suite, face):
+#         self._suite = suite
+#         self._face = face
+    
+#     @property
+#     def face(self):
+#         return self._face
+    
+#     @property
+#     def suite(self):
+#         return self._suite
+
+#     def __str__(self):
+#         if self._face == 1:
+#             face_str = 'A'
+#         elif self._face == 11:
+#             face_str = 'J'
+#         elif self._face == 12:
+#             face_str = 'Q'
+#         elif self._face == 13:
+#             face_str = 'K'
+#         else:
+#             face_str = str(self._face)
+#         return '%s%s' % (self._suite, face_str)
+
+#     def __repr__(self):
+#         return self.__str__()
+
+# class Poker(object):
+#     def __init__(self):
+#         self._cards = [Card(suite, face) for suite in '♠♥♣♦' for face in range(1, 14)]
+#         self._current = 0
+    
+#     @property
+#     def cards(self):
+#         return self._cards
+    
+#     def shuffle(self):
+#         self._current = 0
+#         random.shuffle(self._cards)
+
+#     @property
+#     def next(self):
+#         card = self._cards[self._current]
+#         self._current += 1
+#         return card
+
+#     @property
+#     def has_next(self):
+#         return self._current < len(self._cards)
+    
+# class Player(object):
+
+#     def __init__(self, name):
+#         self._name = name
+#         self._cards_on_hand = []
+
+#     @property
+#     def name(self):
+#         return self._name
+    
+#     @property
+#     def cards_on_hand(self):
+#         return self._cards_on_hand
+
+#     def get(self, card):
+#         self._cards_on_hand.append(card)
+    
+#     def arrange(self, card_key):
+#         self._cards_on_hand.sort(key=card_key)
+    
+# def get_key(card):
+#     return (card.suite, card.face)
+
+# def main():
+#     p = Poker()
+#     p.shuffle()
+#     players = [Player('dongxie'), Player('xidu'), Player('nandi'), Player('beigai')]
+#     for _ in range(13):
+#         for player in players:
+#             player.get(p.next)
+    
+#     for player in players:
+#         print(player.name + ':', end=' ')
+#         player.arrange(get_key)
+#         print(player.cards_on_hand)
+
+# if __name__ == '__main__':
+#     main()
+
+from abc import ABCMeta, abstractmethod
+
+class Employee(object, metaclass = ABCMeta):
+    def __init__(self, name):
+        self._name = name
+    
+    @property
+    def name(self):
+        return self._name
+
+    @abstractmethod
+    def get_salary(self):
+        pass
+
+class Manager(Employee):
+    def get_salary(self):
+        return 15000.0
+
+class Programmer(Employee):
+
+    def __init__(self, name, working_hour=0):
+        super().__init__(name)
+        self._working_hour = working_hour
+
+    @property
+    def working_hour(self):
+        return self._working_hour
+
+    @working_hour.setter
+    def working_hour(self, working_hour):
+        self._working_hour = working_hour if working_hour > 0 else 0
+    
+    def get_salary(self):
+        return 150.0 * self._working_hour
+
+class Salesman(Employee):
+    def __init__(self, name, sales=0):
+        super().__init__(name)
+        self._sales = sales
+    
+    @property
+    def sales(self):
+        return self._sales
+    
+    @sales.setter
+    def sales(self, sales):
+        self._sales = sales if sales > 0 else 0
+    
+    def get_salary(self):
+        return 1200.0 + self._sales * 0.05
+
+def main():
+    emps = [Manager('A'), Programmer('B'), Manager('C'), Salesman('D'), Salesman('E'), Programmer('E'), Programmer('F')]
+    for emp in emps:
+        if isinstance(emp, Programmer):
+            emp.working_hour = int(input('Please input working hour: '))
+        elif isinstance(emp, Salesman):
+            emp.sales = float(input('Please input sales in this month: '))
+        print('You got: ', (emp.name, emp.get_salary()))
+
+if __name__ == '__main__':
+    main()
