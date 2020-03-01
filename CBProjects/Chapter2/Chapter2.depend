@@ -1,4 +1,12 @@
 # depslib dependency file v1.0
-1582698506 source:c:\users\jingqin\documents\github\introcs\cbprojects\chapter2\main.cpp
+1583052761 source:c:\users\jingqin\documents\github\introcs\cbprojects\chapter2\main.cpp
+	<iostream>
+
+1583052582 source:c:\users\jingqin\documents\github\introcs\cbprojects\chapter2\add.cpp
+
+1583069036 source:c:\users\jingqin\documents\github\introcs\cbprojects\chapter2\integer.cpp
+	<iostream>
+
+1583072127 source:c:\users\jingqin\documents\github\introcs\cbprojects\chapter2\function.cpp
 	<iostream>
 

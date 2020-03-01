@@ -1,69 +1,98 @@
 #include <iostream>
-
+#include "add.h"
+#include "square.h"
+#include "geometry.h"
 using namespace std;
-
-void doPrint() {
-    std::cout << "In doPrint()\n";
-}
-
-void doB() {
-    std::cout << "In doB()\n";
-}
-
-void doA() {
-    std::cout << "Starting doA()\n";
-    doB();
-    std::cout << "Ending doA()\n";
-}
-
-//int getValueFromUser() {
+#define PRINT_JOE
+#define FOO 9
+#define PRINT
+//void doPrint()
+//{
+//    std::cout << "In doPrint()\n";
+//}
+//
+//void doB()
+//{
+//    std::cout << "In doB()\n";
+//}
+//
+//void doA()
+//{
+//    std::cout << "Starting doA()\n";
+//    doB();
+//    std::cout << "Ending doA()\n";
+//}
+//
+////int getValueFromUser() {
+////    std::cout << "Enter an integer: ";
+////    int input{};
+////    std::cin >> input;
+////
+////    return input;
+////}
+//
+//int returnFive()
+//{
+//    return 5;
+//}
+//
+//void returnNothing()
+//{
+//    std::cout << "Hi" << "\n";
+//}
+//
+//int getValueFromUser()
+//{
 //    std::cout << "Enter an integer: ";
-//    int input{};
+//    int input {};
 //    std::cin >> input;
 //
 //    return input;
 //}
+//
+//void printValue(int x)
+//{
+//    std::cout << x << '\n';
+//}
+//
+//void printValues(int x, int y)
+//{
+//    std::cout << x << '\n';
+//    std::cout << y << '\n';
+//}
+//
+//int add(int x, int y)
+//{
+//    return x + y;
+//}
+//
+//int multiply(int z, int w)
+//{
+//    return z * w;
+//}
+//
+//void printDouble(int value)
+//{
+//    std::cout << value << " double is: " << value * 2 << '\n';
+//}
+//
+//int doubleNumber(int n)
+//{
+//    return 2*n;
+//}
+//
+//void doSomething()
+//{
+//    std::cout << "Hello\n";
+//}
+//
+//int doMath(int first, int second, int third, int fourth);
 
-int returnFive() {
-    return 5;
-}
+int add(int x, int y);
 
-void returnNothing() {
-    std::cout << "Hi" << "\n";
-}
+int getInteger();
 
-int getValueFromUser() {
-    std::cout << "Enter an integer: ";
-    int input {};
-    std::cin >> input;
-
-    return input;
-}
-
-void printValue(int x) {
-    std::cout << x << '\n';
-}
-
-void printValues(int x, int y) {
-    std::cout << x << '\n';
-    std::cout << y << '\n';
-}
-
-int add(int x, int y) {
-    return x + y;
-}
-
-int multiply(int z, int w) {
-    return z * w;
-}
-
-void printDouble(int value) {
-    std::cout << value << " double is: " << value * 2 << '\n';
-}
-
-int doubleNumber(int n) {
-    return 2*n;
-}
+void doSomething();
 
 int main()
 {
@@ -120,8 +149,44 @@ int main()
 //    std::cout << add(1, multiply(2, 3)) << '\n';
 //    std::cout <<add(1, add(2,3)) << '\n';
 
-    std::cout << doubleNumber(getValueFromUser()) << std::endl;
+//    std::cout << doubleNumber(getValueFromUser()) << std::endl;
 
+//    int x{ 0 };
+//    doSomething();
+//    std::cout << " The sum of 3 and 4 is: " << add(3, 4) << '\n';
+//    return 0;
+
+//    int x{getInteger()};
+//    int y{getInteger()};
+//
+//    std::cout << x << " + " << y << " is " << x + y << "\n";
+//    #ifdef PRINT_JOE
+//        std::cout << "Joe\n";
+//    #endif // PRINT_JOE
+//
+//    #ifndef PRINT_BOB
+//        std::cout << "Bob\n";
+//    #endif // PRINT_BOB
+//
+//    std::cout << "Joe\n";
+//
+//    #if 0
+//        std::cout << "Bob\n";
+//        std::cout << "Steve\n";
+//    #endif // 0
+//
+//    #ifdef FOO
+//        std:cout << FOO;
+//    #endif // FOO
+//
+//
+//    doSomething();
+
+    std::cout << "The sum of 3 and 4 is " << add(3, 4) << '\n';
     return 0;
 
+}
+
+int doMath(int first, int second, int third, int fourth) {
+    return first + second * third / fourth;
 }

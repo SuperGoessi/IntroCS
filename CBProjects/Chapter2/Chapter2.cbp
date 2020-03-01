@@ -32,7 +32,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="add.cpp" />
+		<Unit filename="add.h" />
+		<Unit filename="function.cpp" />
+		<Unit filename="geometry.h" />
+		<Unit filename="integer.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="square.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
