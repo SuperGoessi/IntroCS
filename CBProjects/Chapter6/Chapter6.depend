@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1583944966 source:c:\users\jingqin\documents\github\introcs\cbprojects\chapter6\main.cpp
+	"circle.h"
+	"growth.h"
+	<iostream>
+
+1583944560 source:c:\users\jingqin\documents\github\introcs\cbprojects\chapter6\foo.cpp
+
+1583944589 source:c:\users\jingqin\documents\github\introcs\cbprojects\chapter6\goo.cpp
+
+1583944859 c:\users\jingqin\documents\github\introcs\cbprojects\chapter6\circle.h
+
+1583944896 c:\users\jingqin\documents\github\introcs\cbprojects\chapter6\growth.h
+
+1583945291 source:c:\users\jingqin\documents\github\introcs\cbprojects\chapter6\add.cpp
+	"add.h"
+
+1583945232 c:\users\jingqin\documents\github\introcs\cbprojects\chapter6\add.h
+
+1585067934 source:c:\users\jingqin\documents\github\introcs\cbprojects\chapter6\a.cpp
+
